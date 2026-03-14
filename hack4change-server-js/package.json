@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "name": "js-express",
+  "version": "1.0.0",
+  "description": "Sample Web Server",
+  "main": "src/bootstrap.ts",
+  "author": "Tom Robichaud <tom@dorgky.ca>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.2.3",
+    "@types/supertest": "^6.0.3",
+    "concurrently": "^9.2.1",
+    "supertest": "^7.2.2",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest --dir ./src",
+    "dev": "concurrently \"tsc -w\" \"node --watch dist/index.js\""
+  }
+}

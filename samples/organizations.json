@@ -1,0 +1,82 @@
+[
+  {
+    "name": "House of Nazareth",
+    "type": "Emergency Shelter",
+    "address": "75 Albert St, Moncton, NB",
+    "population_served": "Men, women, families",
+    "contact_email": "info@maisonnazareth.ca",
+    "contact_phone": "506-858-5702"
+  },
+  {
+    "name": "Harvest House Atlantic",
+    "type": "Emergency Shelter + Transitional Housing",
+    "address": "182 High St, Moncton, NB",
+    "population_served": "Men and women",
+    "contact_email": "info@harvesthouseatlantic.org",
+    "contact_phone": "506-388-4357"
+  },
+  {
+    "name": "Crossroads for Women",
+    "type": "Transition Shelter",
+    "address": "Moncton, NB (confidential)",
+    "population_served": "Women and children fleeing domestic violence",
+    "contact_email": "adminfo@crossroadsforwomen.ca",
+    "contact_phone": "506-853-0811"
+  },
+  {
+    "name": "YWCA Moncton",
+    "type": "Supportive Housing",
+    "address": "135 Kendra St, Moncton, NB",
+    "population_served": "Women and children, ages 16+",
+    "contact_email": "info@ywcamoncton.com",
+    "contact_phone": "506-855-4349"
+  },
+  {
+    "name": "John Howard Society of Southeastern NB",
+    "type": "Transitional Housing",
+    "address": "15 Flanders Court, Moncton, NB",
+    "population_served": "Men (justice-involved)",
+    "contact_email": "info@johnhowardsenb.com",
+    "contact_phone": "506-854-3499"
+  },
+  {
+    "name": "Peter McKee Community Food Centre",
+    "type": "Food Bank + Community Kitchen",
+    "address": "66 Capitol St, Moncton, NB",
+    "population_served": "General public, low-income individuals and families",
+    "contact_email": "info@petermckeecfc.ca",
+    "contact_phone": "506-383-4281"
+  },
+  {
+    "name": "Second Mile Food Bank",
+    "type": "Food Bank",
+    "address": "243 Lewisville Rd, Moncton, NB",
+    "population_served": "Dieppe area and part of Moncton",
+    "contact_email": "info@secondmilefoodbank.ca",
+    "contact_phone": "506-857-9121"
+  },
+  {
+    "name": "Salvation Army Community Family Services",
+    "type": "Community Services",
+    "address": "32 King St, Moncton, NB",
+    "population_served": "Families and individuals in crisis",
+    "contact_email": "moncton@salvationarmy.ca",
+    "contact_phone": "506-389-9901"
+  },
+  {
+    "name": "St. Vincent de Paul Society",
+    "type": "Clothing + Household Depot",
+    "address": "113 Norwood Ave, Moncton, NB",
+    "population_served": "General public in need",
+    "contact_email": "svdp.moncton@gmail.com",
+    "contact_phone": "506-857-2088"
+  },
+  {
+    "name": "The Humanity Project",
+    "type": "Meals + Outreach",
+    "address": "449 St George St, Moncton, NB",
+    "population_served": "Anyone in need, housing navigation support",
+    "contact_email": "TheHumanityProjectNB@gmail.com",
+    "contact_phone": "506-382-6840"
+  }
+]

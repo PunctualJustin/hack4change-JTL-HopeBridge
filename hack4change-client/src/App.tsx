@@ -2,31 +2,57 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import counter from './counter'
 import { getHello } from './api/hello'
+import LoginPage from './login_page'
+import DonorDashboard from "./donor_dashboard"
+import OrgDashboard from "./org_dashboard"
+import RequestForm from "./request_form";
 
 const App = () => {
-  const [count, setCount] = useState(counter());
-  const [hello, setHello] = useState("");
 
+  const [count, setCount] = useState(counter())
+  const [hello, setHello] = useState("")
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [role, setRole] = useState<string | null>(null)
+  
+
+  
   useEffect(() => {
     getHello()
       .then(setHello)
-      .catch(console.error);
-  });
+      .catch(console.error)
+  }, [])
 
+  // If user not logged in → show login page
+  if (!isLoggedIn) {
+  return <LoginPage onLogin={(userRole) => 
+    {setIsLoggedIn(true)
+   setRole(userRole)
+  }} />
+}
+// const path = window.location.pathname;
+
+// FIRST check special pages
+
+
+// THEN show dashboards
+if (role === "Donor") {
+  return <DonorDashboard />
+}
+
+if (role === "Organization Member") {
+  return <OrgDashboard />
+}
+/*
+if (path === "/request") {
+  return <RequestForm />
+}*/
+  // Original template page (kept for now)
   return (
     <>
       <h1>{hello}</h1>
 
       <p className="welcome">
-        Welcome to the Hack4Change workshop application. This isn't the same repository that we'll be providing at the actual event, but the structure and tools in it are very similar so you can use this to practice with those and get a handle on how everything works.
-      </p>
-
-      <p>
-        This client includes a few tools and libraries to help you get started. If you want to know more, check the README.MD file for the commands available when running this client, as well as links to documentation for the various tools in use by this application.
-      </p>
-
-      <p>
-        Below is a simple counter. This is here to give you a very basic example of how state can be managed in React, in case you're not familiar.
+        Welcome to the Hack4Change workshop application.
       </p>
 
       <section>

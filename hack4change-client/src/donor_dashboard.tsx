@@ -25,8 +25,8 @@ export default function DonorDashboard() {
   ]
 
   if (showOrganizations) {
-  return <ChooseOrganization />
-}
+    return <ChooseOrganization />
+  }
 
   return (
     <div>

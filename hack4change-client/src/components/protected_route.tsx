@@ -6,7 +6,7 @@ const ProtectedRoute = () => {
   const { user } = useAuth();
 
   // If the user is authenticated, render the child routes, otherwise redirect to the login page
-  return user ? <Outlet /> : <Navigate to="/login" replace />;
+  return user ? <Outlet /> : <Navigate to="/" replace />;
 };
 
 export default ProtectedRoute;

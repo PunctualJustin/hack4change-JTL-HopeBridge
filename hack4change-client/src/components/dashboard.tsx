@@ -1,5 +1,6 @@
-import { useState } from "react"
 import "../App.css"
+import { useNavigate } from "react-router-dom"
+import ResourceCard from "./resource_card"
 import Navbar from "./navbar"
 
 const requests = [
@@ -16,6 +17,8 @@ const requests = [
 ]
 
 export default function Dashboard() {
+    const navigate = useNavigate();
+
     return (
         <div>
             <Navbar />
@@ -30,33 +33,7 @@ export default function Dashboard() {
 
                     <h2>Requests</h2>
 
-                    {requests.map((req) => (
-
-                        <div className="request-card" key={req.id}>
-
-                            <div className="request-info">
-
-                                <div className="emergency-icon">
-                                    ⚠
-                                </div>
-
-                                <div className="request-text">
-
-                                    <div className="request-title">
-                                        Request for <strong>{req.title}</strong>
-                                    </div>
-
-                                    <div className="request-description">
-                                        {req.description}
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    ))}
+                    {requests.map((req) => <ResourceCard {...req} />)}
 
                 </div>
 
@@ -66,7 +43,11 @@ export default function Dashboard() {
                     <div className="side-panel">
                         {/* DONATE BUTTON */}
 
-                        <button className="donate-main">
+                        <button className="donate-main" onClick={() => navigate('/resource-form', {
+                            state: {
+                                form_type: 'donate'
+                            }
+                        })}>
                             Donate
                         </button>
 
@@ -80,8 +61,12 @@ export default function Dashboard() {
                     <div className="side-panel" >
                         {/* REQUEST BUTTON */}
 
-                        <button className="request-main">
-                        Requests
+                        <button className="request-main" onClick={() => navigate('/resource-form', {
+                            state: {
+                                form_type: 'request'
+                            }
+                        })}>
+                            Requests
                         </button>
 
                         <p className="request-description">
@@ -90,9 +75,7 @@ export default function Dashboard() {
                         </p>
                     </div>
                 </div>
-
             </div>
-
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import { useState } from "react"
-import "./App.css"
-import DonationForm from "./donation_form"
+import "../App.css"
+import DonationForm from "../resource_form"
+import Navbar from "../navbar"
 
 export default function ChooseOrganization() {
 
@@ -43,15 +44,13 @@ export default function ChooseOrganization() {
   )
 
   if (selectedOrg) {
-  return <DonationForm organization={selectedOrg} />
-}
+    return <DonationForm organization={selectedOrg} />
+  }
 
   return (
     <div>
 
-      <div className="navbar">
-        <div className="logo">HopeBridge</div>
-      </div>
+      <Navbar />
 
       <h2 className="page-title">
         Choose Where You Want to Donate
@@ -73,9 +72,9 @@ export default function ChooseOrganization() {
         {filtered.map((org, index) => (
 
           <div 
-          key={index} 
-          className="card"
-          onClick={() => setSelectedOrg(org.name)}
+            key={index} 
+            className="card"
+            onClick={() => setSelectedOrg(org.name)}
           >
 
             {org.logo && (

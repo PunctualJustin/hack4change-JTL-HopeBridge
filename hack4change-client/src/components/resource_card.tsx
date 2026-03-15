@@ -1,4 +1,5 @@
 import "../App.css"
+import { useNavigate } from "react-router-dom";
 
 const requests = [
     {
@@ -20,6 +21,8 @@ interface Props {
 }
 
 export default function ResourceCard( props:Props ) {
+    const navigate = useNavigate()
+
     return (
         <div className="request-card" key={props.id}>
 
@@ -40,6 +43,15 @@ export default function ResourceCard( props:Props ) {
                     </div>
 
                 </div>
+
+                <button className="donate-card" onClick={() => navigate('/resource-form', {
+                    state: {
+                        form_type: 'donate',
+                        item_info: props
+                    }
+                })}>
+                    Donate
+                </button>
 
             </div>
 

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useLocation }  from "react-router-dom"
 import "../App.css"
 import Navbar from "./navbar"
@@ -11,6 +11,24 @@ export default function ResourceForm() {
   const [unit, setUnit] = useState("number")
   const [expirationDate, setExpirationDate] = useState("")
   const [submitted, setSubmitted] = useState(false)
+  
+  useEffect(() => {
+    if(state.item_info !== undefined){
+      if(Object.hasOwn(state.item_info, 'title')){
+        setItemName(state.item_info.title)
+      }
+      if(Object.hasOwn(state.item_info, 'description')){
+        setDescription(state.item_info.description)
+      }
+      if(Object.hasOwn(state.item_info, 'unit')){
+        setUnit(state.item_info.unit)
+      }
+      if(Object.hasOwn(state.item_info, 'expirationDate')){
+        setExpirationDate(state.item_info.expirationDate)
+      }
+    }
+  }, [])
+  
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -73,7 +91,7 @@ export default function ResourceForm() {
           />
 
           <button className="submit-btn" type="submit">
-            Finalize { state.form_type == 'donate' ? "Donation" : "Request" }
+            Finalize { state.form_type == "donate" ? "Donation" : "Request" }
           </button>
 
         </form>
